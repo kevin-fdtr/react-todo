@@ -14,7 +14,7 @@ var TodoAddForm = React.createClass({
   render: function () {
     return (
       <div>
-        <form ref="form" onSubmit={this.handleSubmit} className="countdown-form">
+        <form ref="form" onSubmit={this.handleSubmit} className="container__footer">
           <input type="text" ref="todo" placeholder="Add something to do"/>
           <button className="button expanded">Add</button>
         </form>
