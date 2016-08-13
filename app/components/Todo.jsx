@@ -7,6 +7,7 @@ var Todo = React.createClass({
         var renderDate = () => {
             var message = 'Created ';
             var timestamp = createdAt;
+            console.log(createdAt);
             if (completed) {
                 message = 'Completed ';
                 timestamp = completedAt;

@@ -46,7 +46,6 @@ var TodoApp = React.createClass({
             return todo;
         });
         this.setState({todos: updatedTodos});
-        // alert(id);
     },
 
     render: function() {
