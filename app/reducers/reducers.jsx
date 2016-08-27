@@ -34,35 +34,18 @@ export var todosReducer = (state = [], action) => {
         case 'TOGGLE_TODO':
             return state.map((todo) => {
                 if (todo.id === action.id) {
-                    var newTodo = {
+                    var nextCompleted = !todo.completed;
+                    return {
                         ...todo,
-                        completed: !todo.completed,
-                        completedAt: todo.completed
+                        completed: nextCompleted,
+                        completedAt: nextCompleted
                             ? moment().unix()
                             : undefined
                     }
-                    return newTodo;
                 } else {
                     return todo;
                 }
             });
-            // case 'TOGGLE_TODO':
-            //     var updatedTodos = state.map((todo) => {
-            //         if (todo.id === action.id) {
-            //             var newTodo = {
-            //                 ...todo,
-            //                 completed: !todo.completed,
-            //                 completedAt: todo.completed
-            //                     ? moment().unix()
-            //                     : undefined
-            //             }
-            //             return newTodo;
-            //         } else {
-            //             return todo;
-            //         }
-            //     });
-            //     return updatedTodos;
-
         default:
             return state;
     };
