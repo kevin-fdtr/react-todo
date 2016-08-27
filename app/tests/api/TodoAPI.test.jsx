@@ -31,7 +31,6 @@ describe('TodoAPI', () => {
         completed: false
       };
       TodoAPI.setTodos(badTodos);
-      console.log(localStorage.getItem('todos'));
       expect(localStorage.getItem('todos')).toBe(null);
     });
   });
