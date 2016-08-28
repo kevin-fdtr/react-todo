@@ -81,7 +81,6 @@ describe('TodoAPI', () => {
 
     it('should find search results when search term exists', () => {
       var filteredTodos = TodoAPI.filterTodos(todos, false, 'Other');
-      console.log(filteredTodos);
       expect(filteredTodos.length).toBe(1);
       expect(filteredTodos[0].text).toEqual('Other text here');
     });
