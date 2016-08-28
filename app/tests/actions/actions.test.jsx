@@ -37,29 +37,14 @@ describe('Actions', () => {
       store.dispatch(actions.startAddTodo(todoText)).then( () => {
         const actions = store.getActions();
 
-        // commented code below throws an error:
-        // Error: The "actual" argument in expect(actual).toInclude() must be an array or a string
-        // console.log('First expect', actions[0]);
-        // expect(actions[0]).toInclude({
-        //   type: 'ADD_TODO'
-        // });
-
-        // alternate test
-        expect(actions[0].type).toEqual('ADD_TODO');
-
-        // commented code below throws an error:
-        // Error: The "actual" argument in expect(actual).toInclude() must be an array or a string
-        // console.log('First expect', actions[0]);
-        // expect(actions[0].todo).toInclude({
-        //   text: todoText
-        // });
-
-        // alternate test
-        expect(actions[0].todo.text).toEqual(todoText);
-
+        expect(actions[0]).toInclude({
+          type: 'ADD_TODO'
+        });
+        expect(actions[0].todo).toInclude({
+          text: todoText
+        });
         done();
       }).catch(done);
-
     });
 
     it('should generate ADD_TODOS action object', () => {
