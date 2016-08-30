@@ -3,10 +3,10 @@ import firebase from 'firebase';
 // Initialize Firebase
 try {
   var config = {
-    apiKey: "AIzaSyAH6DBXIFw8tzzUDYrVRY7nlgItIugsBF0",
-    authDomain: "fdtr-todo-app.firebaseapp.com",
-    databaseURL: "https://fdtr-todo-app.firebaseio.com",
-    storageBucket: "fdtr-todo-app.appspot.com",
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    databaseURL: process.env.DATABASE_URL,
+    storageBucket: process.env.STORAGE_BUCKET,
   };
   firebase.initializeApp(config);
 
