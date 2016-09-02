@@ -104,4 +104,29 @@ describe('Reducers', () => {
           expect(res[0]).toEqual(todos[0]);
         });
     });
+    describe('authReducer', () => {
+        it('should set auth uid on login', () => {
+            var auth = {
+              uid: 'abc123'
+            };
+            var action = {
+                type: 'LOGIN',
+                uid: auth.uid
+            };
+            var res = reducers.authReducer(undefined, df(action));
+
+            expect(res).toEqual(auth);
+        });
+        it('should clear auth uid on logout', () => {
+          var auth = {
+            uid: 'abc123'
+          };
+          var action = {
+              type: 'LOGOUT',
+          };
+          var res = reducers.authReducer(df(auth), df(action));
+
+          expect(res).toEqual({});
+        });
+    });
 });
